@@ -108,7 +108,7 @@ class SubscriptionManager {
      * @param $data
      * @param int $subscriberStatus
      * @param null $storeId
-     * @return bool
+     * @return bool|void
      */
     public function subscribe($email, $data, $subscriberStatus = Subscriber::STATUS_SUBSCRIBED, $storeId = null)
     {

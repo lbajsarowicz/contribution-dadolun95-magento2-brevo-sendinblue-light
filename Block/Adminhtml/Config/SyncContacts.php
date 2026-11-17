@@ -29,23 +29,11 @@ class SyncContacts extends Field
         Context $context,
         array $data = [],
         ?SecureHtmlRenderer $secureRenderer = null
-    )
-    {
-        parent::__construct($context, $data, $secureRenderer);
-    }
-
-    /**
-     * Set template to itself
-     *
-     * @return $this|Field
-     */
-    protected function _prepareLayout()
-    {
-        parent::_prepareLayout();
-        if (!$this->getTemplate()) {
-            $this->setTemplate('Dadolun_SibContactSync::config/sync-contacts.phtml');
+    ) {
+        if (empty($data['template'])) {
+            $data['template'] = 'Dadolun_SibContactSync::config/sync-contacts.phtml';
         }
-        return $this;
+        parent::__construct($context, $data, $secureRenderer);
     }
 
     /**

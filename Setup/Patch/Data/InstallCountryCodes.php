@@ -280,6 +280,7 @@ class InstallCountryCodes implements DataPatchInterface
         $this->moduleDataSetup->getConnection()
             ->insertArray($this->moduleDataSetup->getTable('sendinblue_country_codes'), $columns, $data);
         $this->moduleDataSetup->endSetup();
+        return $this;
     }
 
     /**
